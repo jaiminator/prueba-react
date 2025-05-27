@@ -1,8 +1,15 @@
-import Titulito from './components/Titulito'
 import './App.css'
-import Human from './components/Human'
+import Contador from './components/Contador';
+import Titulito from './components/Titulito';
+import Human from './components/Human';
+import { useState } from 'react';
 
 function App() {
+
+  // EJERCICIO 
+  // Botones: Inicio - Humano
+  // Hacer click en Inicio: muestra Titulito
+  // Hacer click en Humano: muestra humanos
 
   const humansArray = [
         {name: "Nico", planet: "Earth", image: "https://photojournal.jpl.nasa.gov/browse/PIA00114.gif"},
@@ -10,10 +17,14 @@ function App() {
         {name: "Felipe", planet: "Neptune", image: "https://b.thumbs.redditmedia.com/9KPMHfkLV9M3LRTGllY2IYf3vA3lpK8hiyblPFB4Fik.png"},
     ];
 
+  const [view, setView] = useState("");
+
   return (
     <>
-      <h2>List of humans</h2>
-      {humansArray.map((humanElem) => <Human humanProp={humanElem}/>)}
+      <button onClick={() => setView(<Titulito title="Welcome" />)}>Inicio</button>
+      <button onClick={() => setView(humansArray.map((humanElem) => <Human humanProp={humanElem}/>))}>Humano</button>
+      
+      <div>{view}</div>
     </>
   )
 }

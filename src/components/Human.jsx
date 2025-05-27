@@ -4,7 +4,8 @@ const Human = ({ humanProp }) => {
         <>
             <div>
                 <div><b>Name: </b>{humanProp.name} -- <b>Planet: </b> {humanProp.planet}</div>
-                {/* <div>{humanProp.image}</div> */}
+                <div><img src={humanProp.image}/></div>
+                <hr />
             </div>
         </>
     )
