@@ -1,6 +1,6 @@
-const Titulito = (props) => {
+const Titulito = ({title}) => {
     return (
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
     )
 }
 
