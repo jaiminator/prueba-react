@@ -19,12 +19,16 @@ function App() {
 
   const [view, setView] = useState("");
 
+  // CONDICION DE ESTADO view 
+  // /* view == "contador" ? <Contador /> : "otra cosa"; */
+  
   return (
     <>
-      <button onClick={() => setView(<Titulito title="Welcome" />)}>Inicio</button>
-      <button onClick={() => setView(humansArray.map((humanElem) => <Human humanProp={humanElem}/>))}>Humano</button>
-      
-      <div>{view}</div>
+      <button onClick={() => setView("contador")}>Contador</button>
+      <button onClick={() => setView("humano")}>Humano</button>
+
+      {view == "contador" && <Contador />}
+      {view == "humano" && humansArray.map((humanElem) => <Human humanProp={humanElem}/>)}
     </>
   )
 }
