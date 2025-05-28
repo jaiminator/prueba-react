@@ -2,7 +2,8 @@ import './App.css'
 import Contador from './components/Contador';
 import Titulito from './components/Titulito';
 import Human from './components/Human';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import InputValidation from './components/InputValidation';
 
 function App() {
 
@@ -19,16 +20,46 @@ function App() {
 
   const [view, setView] = useState("");
 
-  // CONDICION DE ESTADO view 
-  // /* view == "contador" ? <Contador /> : "otra cosa"; */
+  const Example = () => {
+
+    const [favoriteColor, setFavoriteColor] = useState('red');
+    const [test, setTest] = useState(0);
+
+    useEffect(() => {
+        console.log('Se ejecuta el 1er useEffect: componente montado');
+        setTimeout(() => {
+        console.log('Timeout finalizado');
+        setFavoriteColor("yellow");
+        }, 2000);
+    }, []);
+
+    useEffect(()=>{
+        console.log("El color favorito se ha actualizado");
+    }, [favoriteColor])
+
+
+    useEffect(()=>{
+        console.log("test se ha actualizado con :", test);
+    }, [test])
+
+
+    return <h1 onClick={() => setTest(Math.random())}>My Favorite Color is {favoriteColor} - {test}</h1>
+  }
+
   
   return (
     <>
       <button onClick={() => setView("contador")}>Contador</button>
       <button onClick={() => setView("humano")}>Humano</button>
-
+      <button onClick={() => setView("useEffect")}>Ejemplo useEffect</button>
+      
       {view == "contador" && <Contador />}
       {view == "humano" && humansArray.map((humanElem) => <Human humanProp={humanElem}/>)}
+      {view == "useEffect" && <Example />}
+
+      <br /><br />
+      <InputValidation />
+
     </>
   )
 }
