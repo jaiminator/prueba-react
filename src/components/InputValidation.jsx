@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"; //Importamos hooks de React
 //Creamos el componente
 const InputValidation = () => {
 
-    //Declaramos estados
+    //Declaramos variables de estado
     const [password, setPassword] = useState("");
     const [validationMessage, setValidationMessage] = useState("");
 
@@ -33,7 +33,7 @@ const InputValidation = () => {
     return (
         <>
             <input onChange={handleInputChange} placeholder="Ingrese password" />
-            <h3 className="validationPass">{validationMessage}</h3>
+            <h3 /* style={validationColor} */ className="validationPass">{validationMessage}</h3>
         </>
     )
 
