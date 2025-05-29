@@ -28,7 +28,7 @@ const Contador = () => {
     return (
         <>
             <h2>Counter: {counter}</h2> {/* Muestra la variable de estado 'counter' por pantalla */}
-            <button style={padding = '10px'} onClick={decrement}>-</button>
+            <button onClick={decrement}>-</button>
             <button onClick={increment}>+</button>
         </>
     )
