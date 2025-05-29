@@ -29,11 +29,15 @@ const InputValidation = () => {
         } 
     }, [password])
 
+    const validationColor = {
+        backgroundColor: password.length < 5 ? 'red' : 'green',
+    }
+
     //Retornamos código HTML
     return (
         <>
             <input onChange={handleInputChange} placeholder="Ingrese password" />
-            <h3 /* style={validationColor} */ className="validationPass">{validationMessage}</h3>
+            <h3 style={validationColor} className="validationPass">{validationMessage}</h3>
         </>
     )
 
