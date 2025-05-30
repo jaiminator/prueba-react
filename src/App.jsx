@@ -8,6 +8,7 @@ import ExampleColor from './components/ExampleColor'
 import InputValidation from './components/InputValidation'
 import UserRegister from './components/UserRegister'
 import UserList from './components/UserList'
+import Error from './components/Error'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
             <Route path='/inputValidation' element={<InputValidation />} />
             <Route path='/userRegister' element={<UserRegister />} />
             <Route path='/users' element={<UserList />} />
+            <Route path='*' element={<Error />} />
           </Routes>
         </BrowserRouter>
       </div>
