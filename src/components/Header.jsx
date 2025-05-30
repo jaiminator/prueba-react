@@ -21,21 +21,16 @@ const Header = () => {
         </span>
         /
         <span style={separador}>
-          <Link to="/human">Humano</Link>
-        </span>
-        /
-        <span style={separador}>
-          <Link to="/exampleColor">Example color</Link>
-        </span>
-        /
-        <span style={separador}>
           <Link to="/inputValidation">Input validation</Link>
         </span>
         /
         <span style={separador}>
           <Link to="/userRegister">User register</Link>
         </span>
-          
+        /
+        <span style={separador}>
+          <Link to="/users">Users list</Link>
+        </span>
       </div>
     </nav>
   )
